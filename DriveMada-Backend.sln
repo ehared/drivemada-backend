@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DriveMada-Backend.Service", "DriveMada-Backend\DriveMada-Backend.Service.csproj", "{DC6B4FE7-8DED-4DCF-B777-80FAC8C38783}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DriveMada-Backend.Manager", "DriveMada-Backend.Manager\DriveMada-Backend.Manager.csproj", "{C265D5AB-9667-4EF7-8F00-3EDC2844372D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DriveMada-Backend.Model", "DriveMada-Backend.Model\DriveMada-Backend.Model.csproj", "{039E3C37-7681-446E-8F5E-82874E919E3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DriveMada-Backend.DataManager", "DriveMada-Backend.DataManager\DriveMada-Backend.DataManager.csproj", "{1106B56E-24BC-46B8-987C-52642F93A9E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC6B4FE7-8DED-4DCF-B777-80FAC8C38783}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC6B4FE7-8DED-4DCF-B777-80FAC8C38783}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC6B4FE7-8DED-4DCF-B777-80FAC8C38783}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC6B4FE7-8DED-4DCF-B777-80FAC8C38783}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C265D5AB-9667-4EF7-8F00-3EDC2844372D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C265D5AB-9667-4EF7-8F00-3EDC2844372D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C265D5AB-9667-4EF7-8F00-3EDC2844372D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C265D5AB-9667-4EF7-8F00-3EDC2844372D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{039E3C37-7681-446E-8F5E-82874E919E3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{039E3C37-7681-446E-8F5E-82874E919E3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{039E3C37-7681-446E-8F5E-82874E919E3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{039E3C37-7681-446E-8F5E-82874E919E3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1106B56E-24BC-46B8-987C-52642F93A9E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1106B56E-24BC-46B8-987C-52642F93A9E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1106B56E-24BC-46B8-987C-52642F93A9E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1106B56E-24BC-46B8-987C-52642F93A9E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {688E53C7-DAD8-4378-B5A4-CC7A404F8A34}
+	EndGlobalSection
+EndGlobal
