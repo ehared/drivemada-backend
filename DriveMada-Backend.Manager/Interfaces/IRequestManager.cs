@@ -7,10 +7,16 @@ namespace DriveMada_Backend.Manager.Interfaces
 {
     public interface IRequestManager
     {
-        bool AddRequest(uint userId, Request request);
+        bool AddRequest(Request request);
 
-        IEnumerable<Request> GetRequests();
+        IEnumerable<Request> GetAvailableRequests();
+
+        IEnumerable<Request> GetClientRequests(uint userId);
+
+        IEnumerable<Request> GetDriverRequests(uint driverId);
 
         bool DeleteRequest(uint reqId);
+
+        bool UpdateRequest(Request request);
     }
 }

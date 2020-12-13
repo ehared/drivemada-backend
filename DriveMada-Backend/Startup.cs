@@ -55,11 +55,11 @@ namespace DriveMada_Backend
             containerBuilder.RegisterType<LoginDataManager>().As<ILoginDataManager>().SingleInstance();
             containerBuilder.RegisterType<LoginManager>().As<ILoginManager>().SingleInstance();
 
-            containerBuilder.RegisterType<DriverDataManager>().As<IDriverDataManager>().SingleInstance();
-            containerBuilder.RegisterType<DriverManager>().As<IDriverManager>().SingleInstance();
-
             containerBuilder.RegisterType<VehicleDataManager>().As<IVehicleDataManager>().SingleInstance();
             containerBuilder.RegisterType<VehicleManager>().As<IVehicleManager>().SingleInstance();
+
+            containerBuilder.RegisterType<RequestDataManager>().As<IRequestDataManager>().SingleInstance();
+            containerBuilder.RegisterType<RequestManager>().As<IRequestManager>().SingleInstance();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

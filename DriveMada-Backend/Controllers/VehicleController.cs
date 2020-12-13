@@ -54,16 +54,14 @@ namespace DriveMada_Backend.Controllers
         {
             try
             {
-                List<Vehicle> vehicles = new List<Vehicle>();
-
-                vehicles = (List<Vehicle>)_vehicleManager.GetVehicles(id);
+                var vehicles = _vehicleManager.GetVehicles(id).ToList();
 
                 if(vehicles.Count != 0)
                 {
                     return Ok(vehicles);
                 }
 
-                return Ok();
+                return Ok("No Vehicle(s) registered for driver");
             }
             catch (Exception e)
             {
@@ -88,7 +86,7 @@ namespace DriveMada_Backend.Controllers
                 }
             } catch(Exception e)
             {
-                return BadRequest("Server Error.");
+                return StatusCode(StatusCodes.Status500InternalServerError, e);
             }
         }
 
@@ -110,7 +108,7 @@ namespace DriveMada_Backend.Controllers
                 }
             } catch (Exception e)
             {
-                return BadRequest("Unable to update vehicle");
+                return StatusCode(StatusCodes.Status500InternalServerError, e);
             }
         }
     }

@@ -40,18 +40,17 @@ namespace DriveMada_Backend.DataManager
 
                 dataReader = cmd.ExecuteNonQuery();
 
-                connection.CloseConnection();
                 status = true;
             }
             catch (Exception e)
             {
                 // Log? 
-          
+
             }
             finally
             {
                 connection.CloseConnection();
-                
+
             }
             return status;
         }
@@ -60,9 +59,9 @@ namespace DriveMada_Backend.DataManager
         {
             List<Vehicle> vehicles = null;
             Vehicle vehicle = null;
-            MySqlDataReader  mySqlReader = null;
+            MySqlDataReader mySqlReader = null;
 
-            var query = "SELECT * FROM driver_user AS driver JOIN vehicle AS v ON driver.vehicleId = v.id AND driver.userId = " + uid.ToString() +" ORDER BY v.id;";
+            var query = "SELECT * FROM driver_user AS driver JOIN vehicle AS v ON driver.vehicleId = v.id AND driver.userId = " + uid.ToString() + " ORDER BY v.id;";
 
             try
             {
@@ -72,7 +71,7 @@ namespace DriveMada_Backend.DataManager
 
                 vehicles = new List<Vehicle>();
 
-                 while(mySqlReader.Read()) // found vehicle
+                while (mySqlReader.Read()) // found vehicle
                 {
 
                     vehicle = new Vehicle();
@@ -85,13 +84,12 @@ namespace DriveMada_Backend.DataManager
                     vehicle.size = mySqlReader.GetString("size");
                     vehicles.Add(vehicle);
 
-                 }
-
-            
+                }
+                mySqlReader.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-               
+
             }
             finally
             {
@@ -116,24 +114,25 @@ namespace DriveMada_Backend.DataManager
                 // check to see if the vehicle exists in the vehicle table
                 mySqlReader = cmd.ExecuteReader();
 
-                if(mySqlReader.Read()) // vehicle exists, now delete
+                if (mySqlReader.Read()) // vehicle exists, now delete
                 {
                     mySqlReader.Close();
                     query = "DELETE from vehicle WHERE id = " + vid + ";";
                     cmd = new MySqlCommand(query, connection.Connection);
                     var dataReader = cmd.ExecuteNonQuery();
-
+                    
                     // delete from driver_user table
                     query = "DELETE from driver_user WHERE vehicleId = " + vid + ";";
                     cmd = new MySqlCommand(query, connection.Connection);
                     dataReader = cmd.ExecuteNonQuery();
                     status = true;
-                } else // could not find vehicle
-                     status = false;
+                }
+                else // could not find vehicle
+                    status = false;
             }
             catch (Exception e)
             {
-                // Log? 
+                // Log
 
             }
             finally
@@ -167,20 +166,18 @@ namespace DriveMada_Backend.DataManager
                         "year= " + vehicle.year + ", " +
                         "colour='" + vehicle.colour + "', " +
                         "licensePlate='" + vehicle.licensePlate + "', " +
-                        "size='" + vehicle.size + "' "+
+                        "size='" + vehicle.size + "' " +
                         "WHERE id = " + vehicle.id + ";";
 
                     cmd = new MySqlCommand(query, connection.Connection);
                     cmd.ExecuteNonQuery();
                     status = true;
 
-                } else
+                }
+                else
                 {
                     status = false;
                 }
-
-    
-
             }
             catch (Exception ex)
             {
@@ -194,5 +191,5 @@ namespace DriveMada_Backend.DataManager
             return status;
         }
     }
-   
+
 }

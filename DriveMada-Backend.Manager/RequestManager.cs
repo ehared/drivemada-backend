@@ -16,14 +16,24 @@ namespace DriveMada_Backend.Manager
             _requestDataManager = requestDataManager ?? throw new ArgumentNullException(nameof(requestDataManager));
         }
 
-        public bool AddRequest(uint userId, Request request)
+        public bool AddRequest(Request request)
         {
-            return _requestDataManager.AddRequest(userId, request);
+            return _requestDataManager.AddRequest(request);
         }
         
-        public IEnumerable<Request> GetRequests()
+        public IEnumerable<Request> GetAvailableRequests()
         {
-            return _requestDataManager.GetRequests();
+            return _requestDataManager.GetAvailableRequests();
+        }
+
+        public IEnumerable<Request>GetClientRequests(uint userId)
+        {
+            return _requestDataManager.GetClientRequests(userId);
+        }
+
+        public IEnumerable<Request> GetDriverRequests(uint driverId)
+        {
+            return _requestDataManager.GetDriverRequests(driverId);
         }
 
         public bool DeleteRequest(uint reqId)
@@ -31,6 +41,10 @@ namespace DriveMada_Backend.Manager
             return _requestDataManager.DeleteRequest(reqId);
         }
 
+        public bool UpdateRequest(Request request)
+        {
+            return _requestDataManager.UpdateRequest(request);
+        }
        
     }
 }

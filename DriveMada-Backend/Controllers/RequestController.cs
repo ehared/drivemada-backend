@@ -25,11 +25,11 @@ namespace DriveMada_Backend.Controllers
 
         [HttpPost]
         [Route("AddRequestByUserId")]
-        public IActionResult AddVehicleByUserId([FromQuery]uint id, [FromBody] Request request)
+        public IActionResult AddRequestByUserId([FromBody] Request request)
         {
             try
             {
-                var successfulSave = _requestManager.AddRequest(id, request);
+                var successfulSave = _requestManager.AddRequest(request);
 
                 if (successfulSave)
                 {
@@ -42,11 +42,124 @@ namespace DriveMada_Backend.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest(e);
+                return StatusCode(StatusCodes.Status500InternalServerError, e);
             }
 
         }
 
-        
+        [HttpGet]
+        [Route("GetRequest")]
+        public IActionResult GetRequest()
+        {
+            try
+            {
+                var requests = _requestManager.GetAvailableRequests().ToList();
+
+                if (requests.Count != 0)
+                {
+                    return Ok(requests);
+                }
+
+                return BadRequest("Could not find any requests");
+            }
+            catch (Exception e)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, e);
+            }
+        }
+
+        [HttpGet]
+        [Route("GetClientRequests")]
+        public IActionResult GetClientRequests([FromQuery]uint id)
+        {
+            try
+            {
+                var requests = _requestManager.GetClientRequests(id).ToList();
+
+                if (requests.Count != 0)
+                {
+                    return Ok(requests);
+                }
+                else
+                    return Ok("No requests were found");
+            }
+            catch (Exception e)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, e);
+            }
+        }
+
+        [HttpGet]
+        [Route("GetDriverRequests")]
+        public IActionResult GetDriverRequests([FromQuery]uint id)
+        {
+            try
+            {
+                var requests = _requestManager.GetDriverRequests(id).ToList();
+
+                if (requests.Count != 0)
+                {
+                    return Ok(requests);
+                }
+                else
+                    return Ok("No requests were found");
+            }
+            catch (Exception e)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, e);
+            }
+        }
+
+        [HttpDelete]
+        [Route("DeleteRequestById")]
+        public IActionResult DeleteRequestById([FromQuery] uint id)
+        {
+            try
+            {
+                bool successfulResult = false;
+
+                successfulResult = _requestManager.DeleteRequest(id);
+
+                if (successfulResult)
+                {
+                    return Ok();
+                }
+                else
+                    return BadRequest();
+            }
+            catch (Exception e)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, e);
+            }
+
+
+        }
+
+        [HttpPut]
+        [Route("UpdateRequestById")]
+        public IActionResult UpdateRequestById([FromBody] Request request)
+        {
+            try
+            {
+                bool successfulResult = false;
+
+                successfulResult = _requestManager.UpdateRequest(request);
+
+                if (successfulResult)
+                {
+                    return Ok();
+                }
+                else
+                    return BadRequest();
+            }
+            catch (Exception e)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, e);
+            }
+
+
+        }
+
+
     }
 }

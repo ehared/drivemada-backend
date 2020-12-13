@@ -1,0 +1,8 @@
+E:\Repos\DriveMada-Backend\DriveMada-Backend.Model\bin\Release\netstandard2.0\DriveMada-Backend.Model.deps.json
+E:\Repos\DriveMada-Backend\DriveMada-Backend.Model\bin\Release\netstandard2.0\DriveMada-Backend.Model.dll
+E:\Repos\DriveMada-Backend\DriveMada-Backend.Model\bin\Release\netstandard2.0\DriveMada-Backend.Model.pdb
+E:\Repos\DriveMada-Backend\DriveMada-Backend.Model\obj\Release\netstandard2.0\DriveMada-Backend.Model.csprojAssemblyReference.cache
+E:\Repos\DriveMada-Backend\DriveMada-Backend.Model\obj\Release\netstandard2.0\DriveMada-Backend.Model.AssemblyInfoInputs.cache
+E:\Repos\DriveMada-Backend\DriveMada-Backend.Model\obj\Release\netstandard2.0\DriveMada-Backend.Model.AssemblyInfo.cs
+E:\Repos\DriveMada-Backend\DriveMada-Backend.Model\obj\Release\netstandard2.0\DriveMada-Backend.Model.dll
+E:\Repos\DriveMada-Backend\DriveMada-Backend.Model\obj\Release\netstandard2.0\DriveMada-Backend.Model.pdb

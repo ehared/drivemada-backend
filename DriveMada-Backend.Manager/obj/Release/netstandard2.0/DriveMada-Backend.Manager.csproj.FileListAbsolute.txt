@@ -1,0 +1,13 @@
+E:\Repos\DriveMada-Backend\DriveMada-Backend.Manager\bin\Release\netstandard2.0\DriveMada-Backend.Manager.deps.json
+E:\Repos\DriveMada-Backend\DriveMada-Backend.Manager\bin\Release\netstandard2.0\DriveMada-Backend.Manager.dll
+E:\Repos\DriveMada-Backend\DriveMada-Backend.Manager\bin\Release\netstandard2.0\DriveMada-Backend.Manager.pdb
+E:\Repos\DriveMada-Backend\DriveMada-Backend.Manager\bin\Release\netstandard2.0\DriveMada-Backend.DataManager.dll
+E:\Repos\DriveMada-Backend\DriveMada-Backend.Manager\bin\Release\netstandard2.0\DriveMada-Backend.Model.dll
+E:\Repos\DriveMada-Backend\DriveMada-Backend.Manager\bin\Release\netstandard2.0\DriveMada-Backend.DataManager.pdb
+E:\Repos\DriveMada-Backend\DriveMada-Backend.Manager\bin\Release\netstandard2.0\DriveMada-Backend.Model.pdb
+E:\Repos\DriveMada-Backend\DriveMada-Backend.Manager\obj\Release\netstandard2.0\DriveMada-Backend.Manager.csprojAssemblyReference.cache
+E:\Repos\DriveMada-Backend\DriveMada-Backend.Manager\obj\Release\netstandard2.0\DriveMada-Backend.Manager.AssemblyInfoInputs.cache
+E:\Repos\DriveMada-Backend\DriveMada-Backend.Manager\obj\Release\netstandard2.0\DriveMada-Backend.Manager.AssemblyInfo.cs
+E:\Repos\DriveMada-Backend\DriveMada-Backend.Manager\obj\Release\netstandard2.0\DriveMada-Backend.Manager.csproj.CopyComplete
+E:\Repos\DriveMada-Backend\DriveMada-Backend.Manager\obj\Release\netstandard2.0\DriveMada-Backend.Manager.dll
+E:\Repos\DriveMada-Backend\DriveMada-Backend.Manager\obj\Release\netstandard2.0\DriveMada-Backend.Manager.pdb
