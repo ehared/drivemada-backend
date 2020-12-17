@@ -55,12 +55,8 @@ namespace DriveMada_Backend.Controllers
             {
                 var requests = _requestManager.GetAvailableRequests().ToList();
 
-                if (requests.Count != 0)
-                {
-                    return Ok(requests);
-                }
+                return Ok(requests);
 
-                return BadRequest("Could not find any requests");
             }
             catch (Exception e)
             {
@@ -76,12 +72,8 @@ namespace DriveMada_Backend.Controllers
             {
                 var requests = _requestManager.GetClientRequests(id).ToList();
 
-                if (requests.Count != 0)
-                {
-                    return Ok(requests);
-                }
-                else
-                    return Ok("No requests were found");
+                return Ok(requests);
+
             }
             catch (Exception e)
             {
@@ -97,12 +89,8 @@ namespace DriveMada_Backend.Controllers
             {
                 var requests = _requestManager.GetDriverRequests(id).ToList();
 
-                if (requests.Count != 0)
-                {
-                    return Ok(requests);
-                }
-                else
-                    return Ok("No requests were found");
+                return Ok(requests);
+
             }
             catch (Exception e)
             {

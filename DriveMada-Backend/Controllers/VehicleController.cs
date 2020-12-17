@@ -56,12 +56,8 @@ namespace DriveMada_Backend.Controllers
             {
                 var vehicles = _vehicleManager.GetVehicles(id).ToList();
 
-                if(vehicles.Count != 0)
-                {
-                    return Ok(vehicles);
-                }
+                return Ok(vehicles);
 
-                return Ok("No Vehicle(s) registered for driver");
             }
             catch (Exception e)
             {

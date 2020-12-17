@@ -34,9 +34,9 @@ namespace DriveMada_Backend.DataManager
 
                 status = true;
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                // Log? 
+                throw new ArgumentException("Error occured with database", ex);
 
             }
             finally
@@ -49,7 +49,7 @@ namespace DriveMada_Backend.DataManager
 
         public IEnumerable<Request> GetAvailableRequests()
         {
-            List<Request> requests = null;
+            List<Request> requests = new List<Request>();
             Request request = null;
             MySqlDataReader mySqlReader = null;
 
@@ -60,8 +60,6 @@ namespace DriveMada_Backend.DataManager
                 connection.OpenConnection();
                 var cmd = new MySqlCommand(query, connection.Connection);
                 mySqlReader = cmd.ExecuteReader();
-
-                requests = new List<Request>();
 
                 while (mySqlReader.Read())
                 {
@@ -83,7 +81,7 @@ namespace DriveMada_Backend.DataManager
             }
             catch (Exception ex)
             {
-
+                throw new ArgumentException("Error occured with database", ex);
             }
             finally
             {
@@ -95,7 +93,7 @@ namespace DriveMada_Backend.DataManager
 
         public IEnumerable<Request> GetClientRequests(uint userId)
         {
-            List<Request> requests = null;
+            List<Request> requests = new List<Request>();
             Request request = null;
             MySqlDataReader mySqlDataReader = null;
 
@@ -107,8 +105,6 @@ namespace DriveMada_Backend.DataManager
                 var cmd = new MySqlCommand(query, connection.Connection);
                 mySqlDataReader = cmd.ExecuteReader();
 
-                requests = new List<Request>();
-
                 while (mySqlDataReader.Read()) // found vehicle
                 {
 
@@ -128,9 +124,9 @@ namespace DriveMada_Backend.DataManager
                 }
                 mySqlDataReader.Close();
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-
+                throw new ArgumentException("Error occured with database" , ex);
             }
             finally
             {
@@ -141,7 +137,7 @@ namespace DriveMada_Backend.DataManager
 
         public IEnumerable<Request> GetDriverRequests(uint userId)
         {
-            List<Request> requests = null;
+            List<Request> requests = requests = new List<Request>();
             Request request = null;
             MySqlDataReader mySqlDataReader = null;
 
@@ -153,8 +149,7 @@ namespace DriveMada_Backend.DataManager
                 var cmd = new MySqlCommand(query, connection.Connection);
                 mySqlDataReader = cmd.ExecuteReader();
 
-                requests = new List<Request>();
-
+                
                 while (mySqlDataReader.Read()) // found vehicle
                 {
 
@@ -174,9 +169,9 @@ namespace DriveMada_Backend.DataManager
                 }
                 mySqlDataReader.Close();
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-
+                throw new ArgumentException("Error occured with database", ex);
             }
             finally
             {
@@ -210,9 +205,9 @@ namespace DriveMada_Backend.DataManager
                 else // could not find request
                     status = false;
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                // Log? 
+                throw new ArgumentException("Error occured with database", ex);
 
             }
             finally
@@ -255,6 +250,7 @@ namespace DriveMada_Backend.DataManager
             }
             catch (Exception ex)
             {
+                throw new ArgumentException("Error occured with database", ex);
             }
             finally
             {
